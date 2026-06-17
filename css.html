@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Artistry | Ashim Poudel ePortfolio</title>
+    <meta name="description" content="Detailed academic deep dive into CSS3, typography, layouts, animations, transitions, and glassmorphism. Features 5 interactive styling laboratories.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Special styles for CSS Page Demos */
+        .flex-grid-demo-box {
+            background: rgba(var(--primary-rgb), 0.1);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        /* Demo 2 Glowing Card */
+        .glow-card-demo {
+            padding: 30px;
+            background: rgba(20, 10, 10, 0.4);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 16px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glow-card-demo:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 15px 30px rgba(239, 68, 68, 0.3), 0 0 25px rgba(239, 68, 68, 0.2);
+        }
+        .glow-card-demo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        /* Demo 3 Glowing Buttons */
+        .glow-btn-demo {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .glow-btn-demo::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #b91c1c, #f87171);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .glow-btn-demo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
+        }
+        .glow-btn-demo:hover::after {
+            opacity: 1;
+        }
+        
+        /* Sandbox elements */
+        .sandbox-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            box-shadow: var(--shadow-main);
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-particles">
+        <div class="bg-particle" style="width: 400px; height: 400px; top: 10%; left: 5%;"></div>
+        <div class="bg-particle" style="width: 500px; height: 500px; bottom: 10%; right: 5%; background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
+    </div>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand-premium" href="index.html">
+                <i class="fa-solid fa-laptop-code text-primary"></i>
+                <span>Ashim<span class="text-primary">Poudel</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-premium" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="css.html">CSS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                            <i class="fas fa-sun text-warning"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Header -->
+    <header class="py-5 bg-gradient-hero">
+        <div class="container text-center py-4">
+            <div class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-3">
+                <i class="fab fa-css3-alt me-1"></i> Stylistic Artistry
+            </div>
+            <h1 class="display-4 fw-extrabold text-main mb-3">CSS3 Styles & <span class="gradient-text">Animations</span></h1>
+            <p class="lead text-muted max-w-2xl mx-auto">Cascading Style Sheets (CSS3) empower developers to convert bare semantic layouts into high-fidelity, responsive, glassmorphic interfaces with micro-animations.</p>
+        </div>
+    </header>
+
+    <!-- Lab Sections: 5 CSS Demos -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- ================= DEMO 1: FLEX vs GRID ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #1</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">1. Flexbox vs. CSS Grid Sandbox</h2>
+                        <p class="text-muted">
+                            <strong>Flexbox</strong> is a one-dimensional layout system ideal for distributing space along rows or columns. <strong>CSS Grid</strong> is a two-dimensional grid system built to handle rows and columns simultaneously.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">layout-systems.css</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5<br>6
+                                </div>
+                                <pre class="code-pre-element"><span class="cm">/* Flexbox Row Configuration */</span>
+<span class="tag">.flex-layout</span> { <span class="attr">display</span>: flex; <span class="attr">justify-content</span>: space-between; }
+
+<span class="cm">/* CSS Grid 2x2 Grid Configuration */</span>
+<span class="tag">.grid-layout</span> { <span class="attr">display</span>: grid; <span class="attr">grid-template-columns</span>: repeat(2, 1fr); <span class="attr">gap</span>: 15px; }</pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Styling Works</div>
+                            <p class="text-muted mb-0 small">
+                                Toggling between <code>flex</code> and <code>grid</code> alters the layout engine. Flex distribution spreads items along the horizontal axis, whereas Grid explicitly aligns boxes into rigid matrix columns.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">CSS Live Output</div>
+                            <div class="d-flex gap-2 mb-4 justify-content-center">
+                                <button class="btn btn-outline-primary btn-sm px-3" onclick="setContainerLayout('flex')"><i class="fas fa-arrows-left-right me-1"></i> Flexbox Row</button>
+                                <button class="btn btn-outline-purple btn-sm px-3" onclick="setContainerLayout('grid')"><i class="fas fa-table-cells me-1"></i> CSS Grid 2x2</button>
+                            </div>
+                            <div class="flex-grid-container" id="flex-grid-wrapper" style="display: flex; justify-content: space-around; gap: 15px; min-height: 180px; align-items: center; transition: all 0.3s ease;">
+                                <div class="flex-grid-demo-box p-3 text-primary border-primary border-opacity-35" style="min-width: 80px;">Box 1</div>
+                                <div class="flex-grid-demo-box p-3 text-primary border-primary border-opacity-35" style="min-width: 80px;">Box 2</div>
+                                <div class="flex-grid-demo-box p-3 text-primary border-primary border-opacity-35" style="min-width: 80px;">Box 3</div>
+                                <div class="flex-grid-demo-box p-3 text-primary border-primary border-opacity-35" style="min-width: 80px;">Box 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 2: GLOWING CARDS ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #2</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">2. Animated Hover Glow Card</h2>
+                        <p class="text-muted">
+                            Hover interactions provide essential visual feedback. By nesting transitions with <code>box-shadow</code>, <code>transform</code>, and radial gradients, we build highly premium glowing cards.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">glow-card.css</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">.glow-card:hover</span> {
+    <span class="attr">transform</span>: translateY(-8px) scale(1.02);
+    <span class="attr">box-shadow</span>: 0 15px 30px rgba(239, 68, 68, 0.3);
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Styling Works</div>
+                            <p class="text-muted mb-0 small">
+                                Adjusting <code>transform: translateY(-8px)</code> shifts the card upward, simulating elevation. The <code>cubic-bezier</code> transition curves prevent sudden movements, ensuring a premium feel.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="preview-badge">CSS Live Output</div>
+                            <div class="glow-card-demo text-center my-4" style="max-width: 320px;">
+                                <div class="fs-1 text-primary mb-3"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                <h4 class="h5 fw-bold text-main">Hover Glow Card</h4>
+                                <p class="text-muted small mb-0">Hover over this card to watch it elevate, scale slightly, and project a neon violet backdrop shadow glow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 3: MODERN BUTTONS ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #3</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">3. Advanced Buttons & Pseudo-Classes</h2>
+                        <p class="text-muted">
+                            Buttons are critical interaction targets. Modern style patterns use gradient transitions and absolute-positioned pseudo-elements (<code>::before</code>, <code>::after</code>) to slide gradients on hover.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">buttons.css</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">.glow-btn::after</span> {
+    <span class="attr">content</span>: ''; <span class="attr">position</span>: absolute;
+    <span class="attr">background</span>: linear-gradient(#ef4444, #f87171);
+    <span class="attr">opacity</span>: 0; <span class="attr">transition</span>: opacity 0.4s ease;
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Styling Works</div>
+                            <p class="text-muted mb-0 small">
+                                The button contains a secondary gradient background locked inside the <code>::after</code> pseudo-element at <code>opacity: 0</code>. Hovering shifts its opacity to 1, creating a smooth color transition.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="preview-badge">CSS Live Output</div>
+                            <div class="my-4 text-center">
+                                <button class="glow-btn-demo"><i class="fa-solid fa-bolt me-1"></i> Interactive Button</button>
+                                <p class="text-muted small mt-3 mb-0">Hover to watch the gradient colors flow smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 4: GLASSMORPHISM ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #4</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">4. Glassmorphism Design Elements</h2>
+                        <p class="text-muted">
+                            Glassmorphism mimics frosted glass overlaying backgrounds. It is defined by multi-layer transparency, semi-opaque borders, and high-intensity backdrop blur filter values.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">glass.css</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">.glass-container</span> {
+    <span class="attr">background</span>: rgba(255, 255, 255, 0.05);
+    <span class="attr">backdrop-filter</span>: blur(12px) saturate(180%);
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Styling Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>backdrop-filter: blur(12px)</code> blurs elements behind the glass container, while <code>rgba(255, 255, 255, 0.05)</code> tints it. The fine border anchors it visually.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center" style="background: linear-gradient(45deg, #120404 0%, #3f0f0f 100%);">
+                            <div class="preview-badge">CSS Live Output</div>
+                            <div class="glass-card p-4 text-center my-4" style="max-width: 320px; background: rgba(255,255,255,0.06);">
+                                <h4 class="h5 fw-bold text-white mb-2">Frosted Glass UI</h4>
+                                <p class="text-white text-opacity-70 small mb-0">This container uses semi-transparent backgrounds and high blur values to stand out elegantly from the dark background gradients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 5: TRANSFORM SANDBOX ================= -->
+            <article class="mb-5">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #5</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">5. CSS 2D Transition & Transform Sandbox</h2>
+                        <p class="text-muted">
+                            CSS 2D Transforms allow you to scale, translate, rotate, and skew elements across the horizontal and vertical axes. Combined with transition timers, adjusting these values changes the element's shape dynamically.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">transforms.css</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">.sandbox-box</span> {
+    <span class="attr">transition</span>: transform 0.1s ease;
+    <span class="attr">transform</span>: rotate(15deg) scale(1.1) skewX(5deg);
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Styling Works</div>
+                            <p class="text-muted mb-0 small">
+                                Adjusting the sliders below changes the element's inline style in real-time, showing how 2D transform matrices calculate rotations and scale expansions dynamically.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="preview-badge">CSS Live Output</div>
+                            
+                            <div class="my-4 d-flex justify-content-center align-items-center" style="min-height: 120px; width: 100%;">
+                                <div class="sandbox-box" id="sandbox-object"></div>
+                            </div>
+                            
+                            <!-- Control Sliders -->
+                            <div class="w-100 px-3">
+                                <div class="mb-2">
+                                    <div class="d-flex justify-content-between text-muted small">
+                                        <span>Rotate (<span id="val-rot">0</span>deg)</span>
+                                    </div>
+                                    <input type="range" class="form-range" id="slider-rot" min="-180" max="180" value="0" oninput="updateSandboxTransforms()">
+                                </div>
+                                <div class="mb-2">
+                                    <div class="d-flex justify-content-between text-muted small">
+                                        <span>Scale (<span id="val-scl">1.0</span>)</span>
+                                    </div>
+                                    <input type="range" class="form-range" id="slider-scl" min="0.5" max="1.5" step="0.1" value="1.0" oninput="updateSandboxTransforms()">
+                                </div>
+                                <div class="mb-2">
+                                    <div class="d-flex justify-content-between text-muted small">
+                                        <span>Skew X (<span id="val-skw">0</span>deg)</span>
+                                    </div>
+                                    <input type="range" class="form-range" id="slider-skw" min="-45" max="45" value="0" oninput="updateSandboxTransforms()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <h5 class="text-main fw-bold"><i class="fa-solid fa-laptop-code text-primary me-2"></i>Ashim Poudel</h5>
+                    <p class="small text-muted mt-2">Computer System Engineering Student at ISMT Biratnagar, specializing in modern interactive web architectures.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Portfolio Pages</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="fullstack.html" class="text-muted text-decoration-none">Full Stack</a></li>
+                        <li><a href="html.html" class="text-muted text-decoration-none">HTML Demos</a></li>
+                        <li><a href="javascript.html" class="text-muted text-decoration-none">JavaScript Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Location Coordinates</h6>
+                    <p class="small text-muted mb-1">ISMT Biratnagar Campus</p>
+                    <p class="small text-muted mb-1">Itahari, Koshi Province, Nepal</p>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-primary small text-decoration-none">ashimpoudel102@gmail.com</a>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary border-opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <span class="small text-muted">&copy; 2026 Ashim Poudel. All Rights Reserved. Prepared for CSE Coursework.</span>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-muted fs-5"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Scroll to Top -->
+    <button class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Specific Interactive JavaScript for CSS Sandboxes -->
+    <script>
+        function setContainerLayout(type) {
+            const wrapper = document.getElementById('flex-grid-wrapper');
+            if (type === 'flex') {
+                wrapper.style.display = 'flex';
+                wrapper.style.gridTemplateColumns = 'none';
+                wrapper.style.justifyContent = 'space-around';
+            } else {
+                wrapper.style.display = 'grid';
+                wrapper.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                wrapper.style.justifyContent = 'stretch';
+            }
+        }
+        
+        function updateSandboxTransforms() {
+            const obj = document.getElementById('sandbox-object');
+            const rot = document.getElementById('slider-rot').value;
+            const scl = document.getElementById('slider-scl').value;
+            const skw = document.getElementById('slider-skw').value;
+            
+            document.getElementById('val-rot').textContent = rot;
+            document.getElementById('val-scl').textContent = scl;
+            document.getElementById('val-skw').textContent = skw;
+            
+            obj.style.transform = `rotate(${rot}deg) scale(${scl}) skewX(${skw}deg)`;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

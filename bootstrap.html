@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 | Ashim Poudel ePortfolio</title>
+    <meta name="description" content="Academic exploration of the Bootstrap 5 responsive layout framework. Features 5 detailed live component and grid demonstrations with code viewers.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-visualizer-box {
+            background: rgba(121, 82, 179, 0.15);
+            border: 1px solid rgba(121, 82, 179, 0.4);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #d9bbf9;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-particles">
+        <div class="bg-particle" style="width: 400px; height: 400px; top: 10%; left: 5%;"></div>
+        <div class="bg-particle" style="width: 500px; height: 500px; bottom: 10%; right: 5%; background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
+    </div>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand-premium" href="index.html">
+                <i class="fa-solid fa-laptop-code text-primary"></i>
+                <span>Ashim<span class="text-primary">Poudel</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-premium" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+                    <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="bootstrap.html">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                            <i class="fas fa-sun text-warning"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="py-5 bg-gradient-hero">
+        <div class="container text-center py-4">
+            <div class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-3">
+                <i class="fab fa-bootstrap me-1"></i> UI Components Framework
+            </div>
+            <h1 class="display-4 fw-extrabold text-main mb-3">Bootstrap 5 <span class="gradient-text">Layout Engine</span></h1>
+            <p class="lead text-muted max-w-2xl mx-auto">Bootstrap is the world's most popular frontend framework. It features responsive 12-column grid containers, breakpoints, and robust pre-styled UI widgets.</p>
+        </div>
+    </header>
+
+    <!-- Lab Modules -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- ================= DEMO 1: BOOTSTRAP GRID ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #1</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">1. Bootstrap Responsive Grid System</h2>
+                        <p class="text-muted">
+                            Bootstrap uses a **12-column layout grid**. Columns scale down automatically on smaller viewports based on breakpoint prefixes (<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code>).
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">grid.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"row"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"col-12 col-md-6 col-lg-4"</span><span class="tag">&gt;</span>Grid Column A<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"col-12 col-md-6 col-lg-8"</span><span class="tag">&gt;</span>Grid Column B<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Grid Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>col-12</code> forces elements to occupy full width on mobile viewports. On medium viewports, <code>col-md-6</code> displays them side-by-side. On larger screens, they resize to 4/12 and 8/12 ratios.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">Bootstrap Live Output</div>
+                            <div class="my-4">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="grid-visualizer-box">col-12 (Full Width)</div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="grid-visualizer-box">col-12 col-md-6 (Half Width)</div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="grid-visualizer-box">col-12 col-md-6 (Half Width)</div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="grid-visualizer-box">col-md-4 (1/3 Width)</div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="grid-visualizer-box">col-md-8 (2/3 Width)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 2: DASHBOARD PANEL ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #2</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">2. Responsive SaaS Dashboard Shell</h2>
+                        <p class="text-muted">
+                            Combining Bootstrap grid alignment utility tokens allows rapid construction of clean dashboard metric dashboards. Custom padding (<code>p-3</code>), cards, and flex margins (<code>ms-auto</code>) handle the layout dynamically.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">dashboard.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"card bg-dark text-white shadow-sm"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"card-body"</span><span class="tag">&gt;</span>Metric Summary<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Dashboard Works</div>
+                            <p class="text-muted mb-0 small">
+                                Utility classes like <code>d-flex</code>, <code>justify-content-between</code>, and <code>align-items-center</code> organize headers, while <code>card-body</code> adds responsive internal padding to structural elements.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">Bootstrap Live Output</div>
+                            <div class="p-3 bg-dark bg-opacity-20 border border-secondary border-opacity-15 rounded-3 my-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="small fw-bold text-muted mb-0"><i class="fas fa-chart-line me-1 text-primary"></i> Academic Status</h5>
+                                    <span class="badge bg-success-subtle text-success small">Semester II</span>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="card bg-dark bg-opacity-50 border-secondary border-opacity-20 text-white p-2">
+                                            <div class="text-muted small">Cumulative GPA</div>
+                                            <strong class="fs-5 text-primary">4.0 / 4.0</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card bg-dark bg-opacity-50 border-secondary border-opacity-20 text-white p-2">
+                                            <div class="text-muted small">Labs Submitted</div>
+                                            <strong class="fs-5 text-success">21 / 21</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 3: CAROUSEL ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #3</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">3. Responsive Carousel Slider</h2>
+                        <p class="text-muted">
+                            The <code>&lt;div class="carousel slide"&gt;</code> element cycles through text and media layers seamlessly. Controls and slide transition animations are managed by Bootstrap's bundled JavaScript engine.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">carousel.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"carousel-item active"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"carousel-caption d-none d-md-block"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h5&gt;</span>First Slide Title<span class="tag">&lt;/h5&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Carousel Works</div>
+                            <p class="text-muted mb-0 small">
+                                Slide controls trigger JS state updates. The <code>active</code> class dictates which item is visible. The CSS rules apply transition classes like <code>carousel-fade</code> to slide content smoothly.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">Bootstrap Live Output</div>
+                            <div id="demoCarousel" class="carousel slide my-4 rounded-3 overflow-hidden border border-secondary border-opacity-15" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                </div>
+                                <div class="carousel-inner" style="min-height: 180px; background: linear-gradient(135deg, #1e293b, #0f172a);">
+                                    <div class="carousel-item active p-5 text-center">
+                                        <div class="fs-1 text-primary mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
+                                        <h5 class="fw-bold text-white">Coursework Engineering Focus</h5>
+                                        <p class="text-muted small">Computer System Engineering curriculum modules.</p>
+                                    </div>
+                                    <div class="carousel-item p-5 text-center">
+                                        <div class="fs-1 text-success mb-2"><i class="fa-solid fa-code"></i></div>
+                                        <h5 class="fw-bold text-white">Full Stack Web Engineering</h5>
+                                        <p class="text-muted small">Building modern dynamic responsive web applications.</p>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 4: MODALS ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #4</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">4. Dynamic Overlay Modals</h2>
+                        <p class="text-muted">
+                            Modals are overlay windows that prioritize key tasks. Bootstrap positions them using absolute layering, dark backdrop filters, and smooth scale-in transitions on open.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">modal.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"modal fade"</span> <span class="attr">id=</span><span class="str">"stdModal"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"modal-dialog"</span><span class="tag">&gt;</span>Modal Content<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Modals Work</div>
+                            <p class="text-muted mb-0 small">
+                                Trigger buttons use attributes like <code>data-bs-toggle="modal"</code> and <code>data-bs-target="#id"</code>. The Bootstrap JS library handles showing, centering, and keyboard dismissals automatically.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="preview-badge">Bootstrap Live Output</div>
+                            <div class="my-4 text-center">
+                                <button type="button" class="btn-premium btn-sm" data-bs-toggle="modal" data-bs-target="#assignmentModal">
+                                    <i class="fa-solid fa-circle-exclamation me-1"></i> Trigger Academic Modal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 5: TOASTS ================= -->
+            <article class="mb-5">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #5</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">5. Floating Toasts & Alerts</h2>
+                        <p class="text-muted">
+                            Alerts and Toasts offer non-intrusive notifications. Toasts slide into view (usually in the screen corners) and close automatically after a set delay.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">toasts.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"toast show"</span> <span class="attr">role=</span><span class="str">"alert"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="str">"toast-body"</span><span class="tag">&gt;</span>Toast Notification Msg<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How Toasts Work</div>
+                            <p class="text-muted mb-0 small">
+                                Toasts use utility classes like <code>toast</code>, <code>show</code>, and <code>align-items-center</code>. Calling the JavaScript <code>bootstrap.Toast()</code> constructor allows triggering these notifications programmatically.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center align-items-center">
+                            <div class="preview-badge">Bootstrap Live Output</div>
+                            <div class="my-4 text-center">
+                                <button class="btn btn-outline-success btn-sm px-3" onclick="triggerLiveToast()"><i class="fa-solid fa-bell me-1"></i> Trigger Floating Toast</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Modal Elements for Demo 4 -->
+    <div class="modal fade" id="assignmentModal" tabindex="-1" aria-labelledby="assignmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary border-opacity-30 text-white rounded-4">
+                <div class="modal-header border-secondary border-opacity-10">
+                    <h5 class="modal-title fw-bold text-primary" id="assignmentModalLabel"><i class="fas fa-graduation-cap me-1"></i> Student Grade Sheet</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted small">Academic performance review at ISMT Biratnagar for CSE modules:</p>
+                    <ul class="list-group list-group-flush bg-transparent text-white border-0">
+                        <li class="list-group-item bg-transparent text-white border-secondary border-opacity-10 d-flex justify-content-between p-2">
+                            <span>Semantic Markup Layout</span>
+                            <span class="badge bg-success small">A+</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-white border-secondary border-opacity-10 d-flex justify-content-between p-2">
+                            <span>CSS3 Styling & Glow Engine</span>
+                            <span class="badge bg-success small">A+</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-white border-0 d-flex justify-content-between p-2">
+                            <span>Interactive Vanilla JS Apps</span>
+                            <span class="badge bg-success small">Excellent (16-20)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer border-secondary border-opacity-10">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close View</button>
+                    <button type="button" class="btn-premium btn-sm" onclick="alert('Grades validated successfully!');" data-bs-dismiss="modal">Confirm Verification</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 110;">
+        <div id="liveToast" class="toast align-items-center text-white bg-success border-0 rounded-3 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-check-circle me-1"></i> Dynamic Bootstrap Toast Triggered Successfully!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <h5 class="text-main fw-bold"><i class="fa-solid fa-laptop-code text-primary me-2"></i>Ashim Poudel</h5>
+                    <p class="small text-muted mt-2">Computer System Engineering Student at ISMT Biratnagar, specializing in modern interactive web architectures.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Portfolio Pages</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="fullstack.html" class="text-muted text-decoration-none">Full Stack</a></li>
+                        <li><a href="html.html" class="text-muted text-decoration-none">HTML Demos</a></li>
+                        <li><a href="javascript.html" class="text-muted text-decoration-none">JavaScript Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Location Coordinates</h6>
+                    <p class="small text-muted mb-1">ISMT Biratnagar Campus</p>
+                    <p class="small text-muted mb-1">Itahari, Koshi Province, Nepal</p>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-primary small text-decoration-none">ashimpoudel102@gmail.com</a>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary border-opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <span class="small text-muted">&copy; 2026 Ashim Poudel. All Rights Reserved. Prepared for CSE Coursework.</span>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-muted fs-5"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Scroll to Top -->
+    <button class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Specific Interactive JavaScript for Toast Triggers -->
+    <script>
+        function triggerLiveToast() {
+            const toastEl = document.getElementById('liveToast');
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

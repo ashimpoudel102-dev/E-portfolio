@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML5 | Ashim Poudel ePortfolio</title>
+    <meta name="description" content="Academic deep-dive into semantic HTML5 markup. Features 5 educational laboratory demonstrations with code viewers, live previews, and logic explanations.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .layout-visualizer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .layout-part {
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px dashed rgba(var(--primary-rgb), 0.5);
+            background: rgba(var(--primary-rgb), 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-particles">
+        <div class="bg-particle" style="width: 400px; height: 400px; top: 10%; left: 5%;"></div>
+        <div class="bg-particle" style="width: 500px; height: 500px; bottom: 10%; right: 5%; background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
+    </div>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand-premium" href="index.html">
+                <i class="fa-solid fa-laptop-code text-primary"></i>
+                <span>Ashim<span class="text-primary">Poudel</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-premium" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="html.html">HTML</a></li>
+                    <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                            <i class="fas fa-sun text-warning"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="py-5 bg-gradient-hero">
+        <div class="container text-center py-4">
+            <div class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-3">
+                <i class="fab fa-html5 me-1"></i> Document Engineering
+            </div>
+            <h1 class="display-4 fw-extrabold text-main mb-3">Semantic <span class="gradient-text">HTML5 Markup</span></h1>
+            <p class="lead text-muted max-w-2xl mx-auto">Semantic HTML5 defines the structure and meaning of web content, ensuring search engines, screen readers, and developers understand the document architecture.</p>
+        </div>
+    </header>
+
+    <!-- Lab Section: 5 Demos -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- ================= DEMO 1: SEMANTIC LAYOUT ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #1</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">1. Semantic Webpage Layout</h2>
+                        <p class="text-muted">
+                            Traditional layouts relied heavily on generic <code>&lt;div&gt;</code> elements. Semantic HTML5 introduced structural tags that describe their content explicitly. This aids SEO scrapers and screen readers.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">layout.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>Menu Links<span class="tag">&lt;/nav&gt;</span>
+<span class="tag">&lt;/header&gt;</span>
+<span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;article&gt;</span>Blog Article Content<span class="tag">&lt;/article&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+    <span class="tag">&lt;aside&gt;</span>Sidebar Widget Advertisements<span class="tag">&lt;/aside&gt;</span>
+<span class="tag">&lt;/main&gt;</span>
+<span class="tag">&lt;footer&gt;</span>Copyright &copy; Ashim Poudel<span class="tag">&lt;/footer&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How It Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>&lt;header&gt;</code> identifies navigational headings. <code>&lt;nav&gt;</code> holds menus. <code>&lt;main&gt;</code> isolates primary body resources. <code>&lt;section&gt;</code> breaks up thematic blocks, and <code>&lt;article&gt;</code> encapsulates standalone syndicatable assets.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">HTML Live Output</div>
+                            <div class="layout-visualizer my-4">
+                                <div class="layout-part" style="background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.5);">
+                                    &lt;header&gt; Header Area
+                                    <div class="p-1 mt-2 rounded bg-dark bg-opacity-20">&lt;nav&gt; Navigation Menu</div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-8">
+                                        <div class="layout-part h-100" style="background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.5);">
+                                            &lt;main&gt; Main Content
+                                            <div class="p-2 mt-2 rounded bg-dark bg-opacity-25 border border-secondary border-opacity-20">&lt;section&gt; Content Section</div>
+                                            <div class="p-2 mt-2 rounded bg-dark bg-opacity-25 border border-secondary border-opacity-20">&lt;article&gt; Independent Article</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="layout-part h-100" style="background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.5);">
+                                            &lt;aside&gt; Sidebar / Ads
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layout-part" style="background: rgba(108,117,125,0.1); border-color: rgba(108,117,125,0.5);">
+                                    &lt;footer&gt; Footer Info
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 2: STUDENT FORM ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #2</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">2. Student Registration Form</h2>
+                        <p class="text-muted">
+                            HTML forms collect structured input. Using semantic field attributes (like <code>required</code>, specific type fields) ensures standard validation is completed inside the browser prior to backend submission.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">form.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;form</span> <span class="attr">id=</span><span class="str">"student-form"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="str">"std-name"</span><span class="tag">&gt;</span>Name:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type=</span><span class="str">"text"</span> <span class="attr">id=</span><span class="str">"std-name"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;label</span> <span class="attr">for=</span><span class="str">"std-course"</span><span class="tag">&gt;</span>Course:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;select</span> <span class="attr">id=</span><span class="str">"std-course"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;option&gt;</span>CSE<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;/select&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How It Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>&lt;label&gt;</code> connects explicitly to inputs via the <code>for</code> attribute matching the input's <code>id</code>. This increases accessibility. Input attributes like <code>required</code> enable browser-native constraint validation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">HTML Live Output</div>
+                            <form class="my-4" onsubmit="alert('HTML5 Form valid! Ready for JS hooks.'); return false;">
+                                <div class="mb-3">
+                                    <label for="std-name-demo" class="form-label small text-main fw-bold">Student Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control bg-dark bg-opacity-25 border-secondary border-opacity-30 text-white" id="std-name-demo" placeholder="e.g. Ashim Poudel" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="std-email-demo" class="form-label small text-main fw-bold">Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control bg-dark bg-opacity-25 border-secondary border-opacity-30 text-white" id="std-email-demo" placeholder="e.g. ashimpoudel102@gmail.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="std-course-demo" class="form-label small text-main fw-bold">Academic Course</label>
+                                    <select class="form-select bg-dark bg-opacity-25 border-secondary border-opacity-30 text-white" id="std-course-demo" style="background-color: var(--code-bg);">
+                                        <option value="cse">Computer System Engineering</option>
+                                        <option value="cs">Computer Science</option>
+                                        <option value="it">Information Technology</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn-premium btn-sm w-100">Validate & Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 3: ACADEMIC TABLES ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #3</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">3. Academic Courses Table</h2>
+                        <p class="text-muted">
+                            Tables model structured, multi-dimensional relational matrix records. Modern HTML5 uses semantic blocks <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> to frame rows.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">table.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5<br>6<br>7
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;thead&gt;</span>
+        <span class="tag">&lt;tr&gt;&lt;th&gt;</span>Course<span class="tag">&lt;/th&gt;&lt;th&gt;</span>Grade<span class="tag">&lt;/th&gt;&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;&lt;td&gt;</span>Systems Eng<span class="tag">&lt;/td&gt;&lt;td&gt;</span>Excellent<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How It Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>&lt;tr&gt;</code> defines table rows. <code>&lt;th&gt;</code> defines header cells (bold, centered by default). <code>&lt;td&gt;</code> represents standard data elements. Structuring tables correctly enables screen readers to parse data row-by-row.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">HTML Live Output</div>
+                            <div class="table-responsive my-4">
+                                <table class="table table-hover table-dark table-striped border border-secondary border-opacity-15 mb-0">
+                                    <thead>
+                                        <tr class="table-primary">
+                                            <th>Code</th>
+                                            <th>ISMT Module</th>
+                                            <th>Semester</th>
+                                            <th>GPA Focus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CSE-401</td>
+                                            <td>Computer Architecture</td>
+                                            <td>Sem I</td>
+                                            <td class="text-success fw-bold">4.0 / 4.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CSE-402</td>
+                                            <td>Full Stack Web Engineering</td>
+                                            <td>Sem II</td>
+                                            <td class="text-success fw-bold">Excellent</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CSE-403</td>
+                                            <td>Database Management Systems</td>
+                                            <td>Sem II</td>
+                                            <td class="text-success fw-bold">4.0 / 4.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 4: NAVIGATION MENUS ================= -->
+            <article class="mb-5 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #4</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">4. Responsive Navigation Menus</h2>
+                        <p class="text-muted">
+                            Websites organize hyperlinks semantically inside unordered lists (<code>&lt;ul&gt;</code>) nested within <code>&lt;nav&gt;</code> blocks. This lets search engine crawlers index site pages efficiently.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">nav.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3<br>4<br>5<br>6
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;nav&gt;</span>
+    <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href=</span><span class="str">"index.html"</span><span class="tag">&gt;</span>Home<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href=</span><span class="str">"projects.html"</span><span class="tag">&gt;</span>Projects<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+<span class="tag">&lt;/nav&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How It Works</div>
+                            <p class="text-muted mb-0 small">
+                                The <code>&lt;ul&gt;</code> (unordered list) tag wraps individual <code>&lt;li&gt;</code> (list item) markers, representing structured menu indexes. Styling libraries then collapse this hierarchy on mobile screens.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">HTML Live Output</div>
+                            <div class="p-3 glass-card my-4" style="background: rgba(255,255,255,0.02);">
+                                <nav class="navbar navbar-expand bg-transparent p-0">
+                                    <ul class="navbar-nav w-100 d-flex justify-content-around">
+                                        <li class="nav-item">
+                                            <a class="nav-link px-2 py-1 active" href="#" onclick="alert('Menu link: Home clicked'); return false;"><i class="fas fa-home me-1"></i>Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link px-2 py-1" href="#" onclick="alert('Menu link: Lab click'); return false;"><i class="fas fa-file-code me-1"></i>Lab</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link px-2 py-1" href="#" onclick="alert('Menu link: Source click'); return false;"><i class="fas fa-code me-1"></i>Code</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ================= DEMO 5: MEDIA EMBEDDING ================= -->
+            <article class="mb-5">
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <span class="text-primary fw-bold text-uppercase small">Lab Laboratory #5</span>
+                        <h2 class="h2 fw-bold text-main mt-1 mb-3">5. Multimedia & Responsive Embedding</h2>
+                        <p class="text-muted">
+                            Embedding audio, video, and map layers is standard in modern layouts. HTML5 features native <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;iframe&gt;</code> tags.
+                        </p>
+                        
+                        <!-- VS Code Container -->
+                        <div class="code-editor-container my-4">
+                            <div class="code-editor-header">
+                                <div class="code-editor-dots">
+                                    <div class="code-editor-dot dot-red"></div>
+                                    <div class="code-editor-dot dot-yellow"></div>
+                                    <div class="code-editor-dot dot-green"></div>
+                                </div>
+                                <span class="text-muted small">media.html</span>
+                            </div>
+                            <div class="code-editor-body">
+                                <div class="code-line-numbers">
+                                    1<br>2<br>3
+                                </div>
+                                <pre class="code-pre-element"><span class="tag">&lt;iframe</span> 
+    <span class="attr">src=</span><span class="str">"https://maps.google.com/..."</span> 
+    <span class="attr">loading=</span><span class="str">"lazy"</span> <span class="attr">sandbox</span><span class="tag">&gt;&lt;/iframe&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-title"><i class="fas fa-info-circle"></i> How It Works</div>
+                            <p class="text-muted mb-0 small">
+                                <code>&lt;iframe&gt;</code> embeds a separate web document inside the parent frame. Adding the <code>loading="lazy"</code> attribute improves initial page loading speed by deferring offscreen iframe loads.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Output -->
+                    <div class="col-lg-6">
+                        <div class="preview-container h-100 d-flex flex-column justify-content-center">
+                            <div class="preview-badge">HTML Live Output</div>
+                            <div class="my-4">
+                                <label class="small text-main fw-bold mb-2">Embedded Maps Preview (Itahari, Nepal)</label>
+                                <div class="ratio ratio-16x9 border border-secondary border-opacity-15 rounded-3 overflow-hidden">
+                                    <!-- Embedded OpenStreetMap location using standard secure frame -->
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=87.25%2C26.65%2C87.31%2C26.69&amp;layer=mapnik&amp;marker=26.671%2C87.279" loading="lazy" style="border: none;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <h5 class="text-main fw-bold"><i class="fa-solid fa-laptop-code text-primary me-2"></i>Ashim Poudel</h5>
+                    <p class="small text-muted mt-2">Computer System Engineering Student at ISMT Biratnagar, specializing in modern interactive web architectures.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Portfolio Pages</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="fullstack.html" class="text-muted text-decoration-none">Full Stack</a></li>
+                        <li><a href="html.html" class="text-muted text-decoration-none">HTML Demos</a></li>
+                        <li><a href="javascript.html" class="text-muted text-decoration-none">JavaScript Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Location Coordinates</h6>
+                    <p class="small text-muted mb-1">ISMT Biratnagar Campus</p>
+                    <p class="small text-muted mb-1">Itahari, Koshi Province, Nepal</p>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-primary small text-decoration-none">ashimpoudel102@gmail.com</a>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary border-opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <span class="small text-muted">&copy; 2026 Ashim Poudel. All Rights Reserved. Prepared for CSE Coursework.</span>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-muted fs-5"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Scroll to Top -->
+    <button class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

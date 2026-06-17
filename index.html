@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashim Poudel | Full Stack Developer ePortfolio</title>
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Academic ePortfolio of Ashim Poudel, Computer System Engineering Student at ISMT Biratnagar. Showcasing Frontend and Full Stack Web Development skills in HTML, CSS, Bootstrap, and JavaScript.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Premium Global Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Glow Particles -->
+    <div class="bg-particles">
+        <div class="bg-particle" style="width: 400px; height: 400px; top: 10%; left: 5%;"></div>
+        <div class="bg-particle" style="width: 500px; height: 500px; bottom: 10%; right: 5%; background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
+    </div>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand-premium" href="index.html">
+                <i class="fa-solid fa-laptop-code text-primary"></i>
+                <span>Ashim <span class="text-primary">Poudel</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-premium" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+                    <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                            <i class="fas fa-sun text-warning"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-wrapper">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <div class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-3 fs-6">
+                        <i class="fa-solid fa-graduation-cap me-1"></i> University Of Sunderland
+                    </div>
+                    <h1 class="display-3 fw-extrabold mb-3">
+                        Hi, I am <span class="gradient-text">Ashim Poudel</span>
+                    </h1>
+                    <h2 class="h3 mb-4 text-muted fw-bold">
+                        I build <span id="typed-text" class="text-primary border-end border-primary border-3 pe-1"></span>
+                    </h2>
+                    <p class="lead text-muted mb-5 max-w-2xl">
+                        A passionate Computer System Engineering scholar specializing in developing responsive, interactive, and high-fidelity static and dynamic web interfaces.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <a href="projects.html" class="btn-premium">
+                            <i class="fa-solid fa-folder-open"></i> View Projects
+                        </a>
+                        <a href="contact.html" class="btn-premium-outline">
+                            <i class="fa-solid fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="hero-avatar-container float-element">
+                        <div class="hero-avatar-glow"></div>
+                        <img src="assets/avatar.jpg" alt="Ashim Poudel Developer Avatar" class="hero-avatar-img img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Stats Metric counters -->
+    <section class="py-5">
+        <div class="container">
+            <div class="glass-card p-4 rounded-4">
+                <div class="row gy-4 text-center">
+                    <div class="col-6 col-md-3 border-end border-primary-subtle border-opacity-10">
+                        <div class="stat-number-counter" data-target="5" data-suffix="+">0</div>
+                        <div class="text-muted small">Core Web Stack Languages</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-primary-subtle border-opacity-10">
+                        <div class="stat-number-counter" data-target="2" data-suffix="+">0</div>
+                        <div class="text-muted small">Completed Assignments</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-primary-subtle border-opacity-10">
+                        <div class="stat-number-counter" data-target="120" data-suffix="+">0</div>
+                        <div class="text-muted small">Hours Coding Web Tech</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number-counter" data-target="100" data-suffix="%">0</div>
+                        <div class="text-muted small">Responsive Quality Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5">
+                    <div class="glass-card p-4 h-100 border border-primary border-opacity-20">
+                        <h3 class="h4 fw-bold text-primary mb-3">Academic Coordinates</h3>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                            <li>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="contact-info-icon"><i class="fas fa-university"></i></div>
+                                    <div>
+                                        <div class="text-muted small">College</div>
+                                        <strong class="text-main">ISMT Biratnagar</strong>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="contact-info-icon"><i class="fas fa-book-reader"></i></div>
+                                    <div>
+                                        <div class="text-muted small">Course of Study</div>
+                                        <strong class="text-main">Computer System Engineering</strong>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>
+                                        <div class="text-muted small">Location</div>
+                                        <strong class="text-main">Itahari, Nepal</strong>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="h1 fw-bold mb-4">About <span class="text-primary">Me</span></h2>
+                    <p class="lead fs-5 text-muted mb-4">
+                        "Ashim Poudel is a passionate Computer System Engineering student at ISMT Biratnagar with a strong interest in frontend and full stack web development. He enjoys building responsive, interactive, and visually attractive web applications using HTML, CSS, Bootstrap, and JavaScript. He is continuously learning modern web technologies and improving problem-solving skills to become a professional full stack developer."
+                    </p>
+                    <div class="edu-card">
+                        <div class="edu-title"><i class="fas fa-bullseye"></i> Portfolio Objectives</div>
+                        <p class="text-muted mb-0 small">
+                            This ePortfolio serves as dual validation: representing rigorous academic competency for the B.Sc. coursework engineering grading criteria, and modeling professional, recruiter-ready full-stack layouts built utilizing modular development standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Preview Grid -->
+    <section class="py-5 bg-black bg-opacity-20">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h1 fw-bold">Full Stack Tech <span class="text-primary">Competencies</span></h2>
+                <p class="text-muted">Core foundations demonstrated interactively across sub-pages</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <div class="fs-1 text-orange mb-3" style="color: #ff5722;"><i class="fab fa-html5"></i></div>
+                        <h3 class="h5 fw-bold">HTML5 Semantic</h3>
+                        <p class="text-muted small">Clean, structured document headers, structural markup, tables, forms, and accessibility.</p>
+                        <a href="html.html" class="text-primary text-decoration-none small fw-bold">View 5 Demos <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <div class="fs-1 mb-3" style="color: #2196f3;"><i class="fab fa-css3-alt"></i></div>
+                        <h3 class="h5 fw-bold">CSS3 Styling</h3>
+                        <p class="text-muted small">Transitions, transformations, glassmorphism, keyframes, custom Flexbox/Grid systems.</p>
+                        <a href="css.html" class="text-primary text-decoration-none small fw-bold">View 5 Demos <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <div class="fs-1 mb-3" style="color: #7952b3;"><i class="fab fa-bootstrap"></i></div>
+                        <h3 class="h5 fw-bold">Bootstrap 5</h3>
+                        <p class="text-muted small">Mobile-first grid wrappers, cards, fluid utilities, pre-configured buttons and modal shells.</p>
+                        <a href="bootstrap.html" class="text-primary text-decoration-none small fw-bold">View 5 Demos <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <div class="fs-1 mb-3" style="color: #ffd600;"><i class="fab fa-js"></i></div>
+                        <h3 class="h5 fw-bold">Vanilla JavaScript</h3>
+                        <p class="text-muted small">Algorithmic logic, calculators, localstorage state retention, text arrays, form validators.</p>
+                        <a href="javascript.html" class="text-primary text-decoration-none small fw-bold">View 6 Demos <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="h1 fw-bold">Featured <span class="text-primary">Projects</span></h2>
+                    <p class="text-muted mb-0">High-fidelity tools demonstrating structural & coding knowledge</p>
+                </div>
+                <a href="projects.html" class="btn-premium-outline btn-sm d-none d-md-inline-flex">All Projects</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="glass-card p-0 rounded-4 overflow-hidden h-100 d-flex flex-column">
+                        <div style="background: linear-gradient(135deg, #1e3a8a, #0d9488); height: 220px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;" class="text-white">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="badge bg-primary-subtle text-primary border border-primary-subtle align-self-start mb-3">Academic ePortfolio</div>
+                            <h3 class="h4 fw-bold">Multi-Page Responsive Portal</h3>
+                            <p class="text-muted small flex-grow-1">The main wrapper system incorporating custom layouts, glassmorphic dashboards, dark/light toggle synchronization, and 21 interactive laboratory demonstrations.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-muted small"><i class="fab fa-html5 text-orange me-1"></i> HTML / CSS / JS</span>
+                                <a href="projects.html" class="text-primary text-decoration-none small fw-bold">Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-0 rounded-4 overflow-hidden h-100 d-flex flex-column">
+                        <div style="background: linear-gradient(135deg, #7f1d1d, #120707); height: 220px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;" class="text-white">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="badge bg-danger-subtle text-danger border border-danger-subtle align-self-start mb-3" style="color: #ef4444; background-color: rgba(239, 68, 68, 0.1);">Interactive Utility</div>
+                            <h3 class="h4 fw-bold">Local Storage To-do Manager</h3>
+                            <p class="text-muted small flex-grow-1">Fully dynamic application supporting items creation, state checks, quick removals, and automatic browser synchronization to preserve states between user reloads.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-muted small"><i class="fab fa-js text-yellow me-1"></i> JS State Control</span>
+                                <a href="javascript.html" class="text-primary text-decoration-none small fw-bold">Interact <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <h5 class="text-main fw-bold"><i class="fa-solid fa-laptop-code text-primary me-2"></i>Ashim Poudel</h5>
+                    <p class="small text-muted mt-2">Computer System Engineering Student at ISMT Biratnagar, specializing in modern interactive web architectures.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Portfolio Pages</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="fullstack.html" class="text-muted text-decoration-none">Full Stack</a></li>
+                        <li><a href="html.html" class="text-muted text-decoration-none">HTML Demos</a></li>
+                        <li><a href="javascript.html" class="text-muted text-decoration-none">JavaScript Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fw-bold text-primary small mb-3">Location Coordinates</h6>
+                    <p class="small text-muted mb-1">ISMT Biratnagar Campus</p>
+                    <p class="small text-muted mb-1">Itahari, Koshi Province, Nepal</p>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-primary small text-decoration-none">ashimpoudel102@gmail.com</a>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary border-opacity-10">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <span class="small text-muted">&copy; 2026 Ashim Poudel. All Rights Reserved. Prepared for CSE Coursework.</span>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ashimpoudel" target="_blank" class="text-muted fs-5"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ashimpoudel102@gmail.com" class="text-muted fs-5"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scroll-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 Bundle JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Central Interaction Engine -->
+    <script src="script.js"></script>
+</body>
+</html>
